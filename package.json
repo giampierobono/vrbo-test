@@ -1,0 +1,78 @@
+{
+  "name": "@vrbo/root",
+  "private": true,
+  "license": "MIT",
+  "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
+  "scripts": {
+    "build:common": "lerna run build --scope @vrbo/common-components",
+    "build:leaderboard": "lerna run build --scope @vrbo/property-leaderboard",
+    "build:local:deps": "npm run build:common",
+    "clean:node_modules:all": "npm run concurrently \"rimraf node_modules\" \"lerna run clean:node_modules --parallel\"",
+    "clean:node_modules:common": "lerna run clean:node_modules --scope @vrbo/common-components",
+    "clean:node_modules:leaderboard": "lerna run clean:node_modules --scope @vrbo/property-leaderboard",
+    "clean:node_modules:root": "rimraf node_modules",
+    "concurrently": "concurrently --kill-others-on-fail",
+    "preinstall": "node ./scripts/check-npm.js",
+    "postinstall": "npm run build:local:deps && lerna bootstrap",
+    "sort-package-json:all": "npm run concurrently \"npm run sort-package-json:root\" \"lerna run sort-package-json --parallel\"",
+    "sort-package-json:common": "lerna run sort-package-json --scope @vrbo/common-components",
+    "sort-package-json:leaderboard": "lerna run sort-package-json --scope @vrbo/property-leaderboard",
+    "sort-package-json:root": "sort-package-json package.json",
+    "start:property-leaderboard": "lerna run start --scope @vrbo/property-leaderboard",
+    "versions-harmonize": "gulp versions-harmonize"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.html": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.ts": [
+      "tslint --fix --config ./tslint.json",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "scopeList": [
+        "common-components",
+        "property-leaderboard",
+        "global"
+      ]
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "concurrently": "^5.0.2",
+    "cz-conventional-changelog": "^3.0.2",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-json-editor": "^2.5.4",
+    "husky": "^3.1.0",
+    "lerna": "^3.15.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "react": "16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "rimraf": "^3.0.0",
+    "sort-package-json": "^1.31.0",
+    "tslib": "1.9.3",
+    "typescript": "3.4.1"
+  }
+}
