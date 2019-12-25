@@ -39,7 +39,7 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+      "prepare-commit-msg": "exec < /dev/tty && lint-staged && git cz --hook || true"
     }
   },
   "lint-staged": {
@@ -74,5 +74,8 @@
     "tslib": "1.9.3",
     "tslint": "^5.20.1",
     "typescript": "^3.4.1"
+  },
+  "engines": {
+    "node": ">10.0.0"
   }
 }
