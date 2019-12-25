@@ -4,22 +4,38 @@
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
   "scripts": {
-    "build:common": "lerna run build --scope @vrbo/common-components",
+    "build:common-components": "lerna run build --scope @vrbo/common-components",
+    "build:data-models": "lerna run build --scope @vrbo/data-models",
     "build:leaderboard": "lerna run build --scope @vrbo/property-leaderboard",
-    "build:local:deps": "npm run build:common",
+    "build:local:deps": "npm run build:data-models && npm run build:poller && npm run build:common-components",
+    "build:poller": "lerna run build --scope @vrbo/api-poller",
+    "clean:lib:all": "lerna run clean:lib --parallel",
+    "clean:lib:api-poller": "lerna run clean:lib --scope @vrbo/api-poller",
+    "clean:lib:common-components": "lerna run clean:lib --scope @vrbo/common-components",
+    "clean:lib:data-models": "lerna run clean:lib --scope @vrbo/data-models",
     "clean:node_modules:all": "npm run concurrently \"rimraf node_modules\" \"lerna run clean:node_modules --parallel\"",
-    "clean:node_modules:common": "lerna run clean:node_modules --scope @vrbo/common-components",
+    "clean:node_modules:api-poller": "lerna run clean:node_modules --scope @vrbo/api-poller",
+    "clean:node_modules:common-components": "lerna run clean:node_modules --scope @vrbo/common-components",
+    "clean:node_modules:data-models": "lerna run clean:node_modules --scope @vrbo/data-models",
     "clean:node_modules:leaderboard": "lerna run clean:node_modules --scope @vrbo/property-leaderboard",
     "clean:node_modules:root": "rimraf node_modules",
     "concurrently": "concurrently --kill-others-on-fail",
+    "deps:versions:harmonize": "gulp versions-harmonize",
     "preinstall": "node ./scripts/check-npm.js",
-    "postinstall": "npm run build:local:deps && lerna bootstrap",
+    "postinstall": "lerna bootstrap",
+    "lint:api-poller": "lerna run lint --scope @vrbo/api-poller",
+    "lint:api-poller:fix": "lerna run lint:fix --scope @vrbo/api-poller",
+    "lint:common-component": "lerna run lint --scope @vrbo/common-components",
+    "lint:common-component:fix": "lerna run lint:fix --scope @vrbo/common-components",
+    "lint:data-models": "lerna run lint --scope @vrbo/data-models",
+    "lint:data-models:fix": "lerna run lint:fix --scope @vrbo/data-models",
     "sort-package-json:all": "npm run concurrently \"npm run sort-package-json:root\" \"lerna run sort-package-json --parallel\"",
-    "sort-package-json:common": "lerna run sort-package-json --scope @vrbo/common-components",
+    "sort-package-json:api-poller": "lerna run sort-package-json --scope @vrbo/api-poller",
+    "sort-package-json:common-components": "lerna run sort-package-json --scope @vrbo/common-components",
+    "sort-package-json:data-models": "lerna run sort-package-json --scope @vrbo/data-models",
     "sort-package-json:leaderboard": "lerna run sort-package-json --scope @vrbo/property-leaderboard",
     "sort-package-json:root": "sort-package-json package.json",
-    "start:property-leaderboard": "lerna run start --scope @vrbo/property-leaderboard",
-    "versions-harmonize": "gulp versions-harmonize"
+    "start:property-leaderboard": "lerna run start --scope @vrbo/property-leaderboard"
   },
   "husky": {
     "hooks": {
@@ -27,19 +43,6 @@
     }
   },
   "lint-staged": {
-    "*.html": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "stylelint --fix",
-      "git add"
-    ],
     "*.ts": [
       "tslint --fix --config ./tslint.json",
       "prettier --write",
@@ -48,12 +51,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog",
-      "scopeList": [
-        "common-components",
-        "property-leaderboard",
-        "global"
-      ]
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "devDependencies": {
@@ -67,12 +65,14 @@
     "lerna": "^3.15.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "react": "16.12.0",
+    "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
     "rimraf": "^3.0.0",
     "sort-package-json": "^1.31.0",
+    "ts-loader": "^6.2.1",
     "tslib": "1.9.3",
-    "typescript": "3.4.1"
+    "tslint": "^5.20.1",
+    "typescript": "^3.4.1"
   }
 }
