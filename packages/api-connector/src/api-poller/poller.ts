@@ -3,7 +3,7 @@ import { getRandomNumber } from "../utils";
 
 const pollerDefaultConfig: PollerConfig = {
   limit: 10,
-  type: PropertyType.Houses,
+  type: PropertyType.Houses
 };
 
 const items: { houses: string[]; condos: string[] } = {
@@ -17,7 +17,7 @@ const items: { houses: string[]; condos: string[] } = {
     "Luxury Home deserunt mollit anim id est laborum",
     "Luxury Home mollit anim id est laborum laboris nisi ut aliquip ex ea commodo",
     "Luxury Home qui officia deserunt mollit anim id est laborum amet, consectetur adipisicing elit, sed do eiusmod",
-    "Luxury Home ipsum dolor sit amet, consectetur deserunt mollit anim id est laborum",
+    "Luxury Home ipsum dolor sit amet, consectetur deserunt mollit anim id est laborum"
   ],
   condos: [
     "Fancy Condo Bacon ipsum dolor amet pastrami chicken venison, meatball alcatra pork belly short ribs",
@@ -29,8 +29,8 @@ const items: { houses: string[]; condos: string[] } = {
     "Fancy Condo cupim turducken ham hock venison kielbasa tail beef burgdoggen hamburger",
     "Fancy Condo venison kielbasa beef burgdoggen hamburger spare",
     "Fancy Condo jerky landjaeger leberkas, cupim turducken ham hock venison kielbasa",
-    "Fancy Condo sirloin capicola, Short loin alcatra tail beef venison kielbasa",
-  ],
+    "Fancy Condo sirloin capicola, Short loin alcatra tail beef venison kielbasa"
+  ]
 };
 
 const getData = (type: PropertyType): Property[] => {
@@ -50,7 +50,7 @@ const getData = (type: PropertyType): Property[] => {
       price: Math.floor(Math.random() * 300) + 100,
       beds: Math.floor(Math.random() * 5) + 1,
       bath: Math.floor(Math.random() * 5) + 1,
-      sqFeet: Math.floor(Math.random() * 3000) + 1500,
+      sqFeet: Math.floor(Math.random() * 3000) + 1500
     });
   }
   return results;
@@ -61,7 +61,7 @@ const processData = (data: Property[], limit: number): Property[] =>
 
 export const poll = (
   options: PollerConfig,
-  callBack: (properties: Property[]) => void,
+  callBack: (properties: Property[]) => void
 ) => {
   const config: PollerConfig = { ...pollerDefaultConfig, ...options };
   return new Promise((resolve, reject) => {

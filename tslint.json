@@ -4,6 +4,6 @@
   "rules": {
     "interface-name": false,
     "object-literal-sort-keys": false,
-    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
+    "trailing-comma": [false]
   }
 }
