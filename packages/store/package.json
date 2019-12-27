@@ -1,0 +1,30 @@
+{
+  "name": "@vrbo/store",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
+  "description": "Library of reusable reducers/actions/selectors/epics",
+  "files": ["dist"],
+  "main": "./dist/store.js",
+  "types": "./dist/types.d.ts",
+  "scripts": {
+    "prebuild": "npm run clean:dist",
+    "build": "webpack",
+    "clean:dist": "rimraf dist/",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "sort-package-json": "sort-package-json"
+  },
+  "devDependencies": {
+    "@vrbo/api-poller": "0.0.1",
+    "@vrbo/data-models": "0.0.1",
+    "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "reselect": "^4.0.0",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.5.3",
+    "sort-package-json": "^1.31.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.4.1",
+    "webpack": "4.41.2"
+  }
+}
