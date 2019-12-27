@@ -3,26 +3,22 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
-  "files": [
-    "lib"
-  ],
-  "main": "./lib/data-models.js",
-  "types": "./lib/types.d.ts",
+  "description": "Library of shared data models",
+  "files": ["dist"],
+  "main": "./dist/data-models.js",
+  "types": "./dist/types.d.ts",
   "scripts": {
-    "prebuild": "npm run clean:lib",
-    "build": "tsc",
-    "clean:lib": "rimraf lib/",
-    "clean:node_modules": "rimraf node_modules",
+    "prebuild": "npm run clean:dist",
+    "build": "webpack",
+    "clean:dist": "rimraf dist/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "lint:fix": "npm run lint -- --fix",
-    "sort-package-json": "sort-package-json package.json"
+    "sort-package-json": "sort-package-json"
   },
   "devDependencies": {
-    "ts-loader": "^6.2.1",
+    "rimraf": "^3.0.0",
+    "sort-package-json": "^1.31.0",
     "tslint": "^5.20.1",
-    "typescript": "^3.4.1"
-  },
-  "peerDependencies": {
-    "rimraf": "^3.0.0"
+    "typescript": "^3.4.1",
+    "webpack": "4.41.2"
   }
 }

@@ -6,23 +6,15 @@
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
   "scripts": {
     "build": "react-scripts build",
-    "clean:node_modules": "rimraf node_modules",
+    "clean:lib": "rimraf build",
     "eject": "react-scripts eject",
     "sort-package-json": "sort-package-json package.json",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   },
   "eslintConfig": {
     "extends": "react-app"
