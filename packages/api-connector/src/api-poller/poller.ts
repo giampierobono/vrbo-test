@@ -6,7 +6,7 @@ const pollerDefaultConfig: PollerConfig = {
   type: PropertyType.Houses
 };
 
-const items: { houses: string[]; condos: string[] } = {
+const fakeDB: { houses: string[]; condos: string[] } = {
   houses: [
     "Luxury Home Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
     "Luxury Home tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -37,7 +37,7 @@ const getData = (type: PropertyType): Property[] => {
   let item;
   let i;
   let len;
-  const list = items[type] || [];
+  const list = fakeDB[type] || [];
   const results = [];
 
   for (i = 0, len = list.length; i < len; i++) {
@@ -61,10 +61,10 @@ const processData = (data: Property[], limit: number): Property[] =>
 
 export const poll = (
   options: PollerConfig,
-  callBack: (properties: Property[]) => void
+  callBack?: (properties: Property[]) => void
 ) => {
   const config: PollerConfig = { ...pollerDefaultConfig, ...options };
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       const payload = processData(getData(config.type), config.limit);
 
