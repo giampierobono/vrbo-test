@@ -1,9 +1,9 @@
 {
   "name": "@vrbo/root",
   "private": true,
+  "description": "Vrbo tech dev test monorepo",
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
-  "description": "Vrbo tech dev test monorepo",
   "scripts": {
     "build:api-poller": "lerna run build --scope @vrbo/api-poller",
     "build:common-components": "lerna run build --scope @vrbo/common-components",

@@ -1,9 +1,9 @@
 {
   "name": "@vrbo/common-components",
   "version": "0.0.1",
+  "description": "Library of reusable presenter components",
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
-  "description": "Library of reusable presenter components",
   "files": ["dist"],
   "main": "./dist/common-components.js",
   "types": "./dist/types.d.ts",
@@ -23,10 +23,12 @@
     "@types/react-dom": "16.8.3",
     "@types/react-redux": "^7.1.5",
     "@vrbo/data-models": "0.0.1",
+    "typescript": "^3.4.1"
+  },
+  "peerDependencies": {
     "rimraf": "^3.0.0",
     "sort-package-json": "^1.31.0",
     "tslint": "^5.20.1",
-    "typescript": "^3.4.1",
     "webpack": "4.41.2"
   }
 }
