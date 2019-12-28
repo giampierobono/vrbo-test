@@ -1,9 +1,16 @@
 import { poll } from "@vrbo/api-poller";
 import { Action } from "redux";
 import { ActionsObservable, ofType, StateObservable } from "redux-observable";
-import { of } from "rxjs";
+import { of, timer } from "rxjs";
 import { fromPromise } from "rxjs/internal-compatibility";
-import { catchError, map, switchMap, withLatestFrom } from "rxjs/operators";
+import {
+  catchError,
+  exhaustMap,
+  map,
+  switchMap,
+  take,
+  withLatestFrom
+} from "rxjs/operators";
 import {
   failPollingPropertiesListAction,
   PropertyActions,
@@ -17,11 +24,16 @@ export const loadPropertiesList$ = (
 ) =>
   actions$.pipe(
     ofType(PropertyActions.PollPropertiesList),
-    withLatestFrom(state$),
-    switchMap(([, state]: [Action, GlobalState]) =>
-      fromPromise(poll(state.pollerConfig.config)).pipe(
-        map(updatePropertiesListAction),
-        catchError((err: any) => of(failPollingPropertiesListAction(err)))
+    switchMap(() =>
+      timer(0, 15000).pipe(
+        withLatestFrom(state$),
+        exhaustMap(([, state]: [number, GlobalState]) =>
+          fromPromise(poll(state.pollerConfig.config)).pipe(
+            take(1),
+            map(updatePropertiesListAction),
+            catchError((err: any) => of(failPollingPropertiesListAction(err)))
+          )
+        )
       )
     )
   );

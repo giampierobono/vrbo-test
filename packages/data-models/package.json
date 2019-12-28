@@ -4,7 +4,9 @@
   "description": "Library of shared data models",
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/data-models.js",
   "types": "./dist/types.d.ts",
   "scripts": {
