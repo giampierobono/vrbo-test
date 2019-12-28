@@ -8,24 +8,39 @@
     "build": "react-scripts build",
     "clean:lib": "rimraf build",
     "eject": "react-scripts eject",
-    "sort-package-json": "sort-package-json package.json",
+    "sort-package-json": "sort-package-json",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/react-redux": "^7.1.5",
+    "@types/ramda": "^0.26.39",
     "@vrbo/common-components": "0.0.1",
+    "@vrbo/store": "0.0.1",
+    "@vrbo/data-models": "0.0.1",
+    "ramda": "^0.26.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.5",
+    "react-redux": "^7.1.3",
+    "redux-observable": "^1.2.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

@@ -4,7 +4,9 @@
   "description": "Library of reusable presenter components",
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/common-components.js",
   "types": "./dist/types.d.ts",
   "scripts": {

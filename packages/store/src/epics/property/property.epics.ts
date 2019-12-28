@@ -1,7 +1,7 @@
 import { poll } from "@vrbo/api-poller";
 import { Action } from "redux";
-import { ofType } from "redux-observable";
-import { Observable, of } from "rxjs";
+import { ActionsObservable, ofType, StateObservable } from "redux-observable";
+import { of } from "rxjs";
 import { fromPromise } from "rxjs/internal-compatibility";
 import { catchError, map, switchMap, withLatestFrom } from "rxjs/operators";
 import {
@@ -12,8 +12,8 @@ import {
 import { GlobalState } from "../../global-state.model";
 
 export const loadPropertiesList$ = (
-  actions$: Observable<Action>,
-  state$: Observable<GlobalState>
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<any>
 ) =>
   actions$.pipe(
     ofType(PropertyActions.PollPropertiesList),

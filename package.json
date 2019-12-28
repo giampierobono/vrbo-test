@@ -34,6 +34,7 @@
     "lint:common-component:fix": "lerna run lint --scope @vrbo/common-components -- -- --fix",
     "lint:data-models": "lerna run lint --scope @vrbo/data-models",
     "lint:data-models:fix": "lerna run lint --scope @vrbo/data-models -- -- --fix",
+    "lint:property-leaderboard:fix": "lerna run lint --scope @vrbo/property-leaderboard",
     "lint:store": "lerna run lint --scope @vrbo/store",
     "lint:store:fix": "lerna run lint --scope @vrbo/store -- -- --fix",
     "sort-package-json:all": "npm run concurrently \"npm run sort-package-json:root\" \"lerna run sort-package-json --parallel\"",

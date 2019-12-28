@@ -4,7 +4,9 @@
   "description": "Library of reusable reducers/actions/selectors/epics",
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/store.js",
   "types": "./dist/types.d.ts",
   "scripts": {

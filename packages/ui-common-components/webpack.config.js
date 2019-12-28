@@ -15,9 +15,5 @@ const PATHS = {
 };
 
 module.exports = {
-  ...webpackCommon(PATHS, "common-components"),
-  externals: {
-    react: "React",
-    "react-dom": "ReactDOM"
-  }
+  ...webpackCommon(PATHS, "common-components")
 };
