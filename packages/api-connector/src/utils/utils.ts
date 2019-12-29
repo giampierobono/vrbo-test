@@ -3,7 +3,7 @@ export const getRandomNumber = (minValue: number, maxValue: number) =>
     parseFloat(
       Math.min(
         minValue + Math.random() * (maxValue - minValue),
-        maxValue,
-      ).toFixed(2),
-    ) * 2,
+        maxValue
+      ).toFixed(2)
+    ) * 2
   ) / 2;
