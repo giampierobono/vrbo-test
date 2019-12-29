@@ -8,4 +8,4 @@ const PATHS = {
     dist: path.join(__dirname, "./dist")
 };
 
-module.exports = webpackCommon(PATHS, "api-connector");
+module.exports = webpackCommon(PATHS, "api-poller");

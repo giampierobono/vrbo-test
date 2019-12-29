@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/api-connector.js",
+  "main": "./dist/api-poller.js",
   "types": "./dist/types.d.ts",
   "scripts": {
     "prebuild": "npm run clean:dist",
