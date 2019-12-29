@@ -1,7 +1,12 @@
-import { pollerConfigReducer, propertyReducer } from "@vrbo/store";
+import {
+  apiCallStatusReducer,
+  pollerConfigReducer,
+  propertyReducer
+} from "@vrbo/store";
 import { combineReducers } from "redux";
 
 export const rootReducer = combineReducers({
   propertiesList: propertyReducer,
-  pollerConfig: pollerConfigReducer
+  pollerConfig: pollerConfigReducer,
+  apiCallStatus: apiCallStatusReducer
 });

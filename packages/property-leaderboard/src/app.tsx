@@ -6,7 +6,10 @@ import { connect, Provider } from "react-redux";
 import { store } from "./state";
 
 const mapStateToProps = (state: GlobalState) => {
-  return { properties: pathOr([], ["propertiesList", "properties"])(state) };
+  return {
+    properties: pathOr([], ["propertiesList", "properties"])(state),
+    isPropertiesListLoading: state.apiCallStatus.propertiesPollLoading
+  };
 };
 
 const PropertiesListContainer = connect(mapStateToProps)(
