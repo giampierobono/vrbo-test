@@ -29,6 +29,7 @@
     "typescript": "^3.4.1"
   },
   "peerDependencies": {
+    "@vrbo/styling": "0.0.1",
     "rimraf": "^3.0.0",
     "sort-package-json": "^1.31.0",
     "tslint": "^5.20.1",
