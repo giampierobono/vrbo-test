@@ -54,6 +54,10 @@
     }
   },
   "lint-staged": {
+    "*.html": [
+      "prettier --write",
+      "git add"
+    ],
     "*.scss": [
       "stylelint --fix",
       "git add"
