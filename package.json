@@ -12,6 +12,7 @@
     "build:property-leaderboard": "lerna run build --scope @vrbo/property-leaderboard",
     "build:store": "lerna run build --scope @vrbo/store",
     "build:styling": "lerna run build --scope @vrbo/styling",
+    "clean:all": "npm run clean:dist:all && npm run clean:node_modules:all",
     "clean:dist:all": "lerna run clean:dist --parallel",
     "clean:dist:api-poller": "lerna run clean:dist --scope @vrbo/api-poller",
     "clean:dist:common-components": "lerna run clean:dist --scope @vrbo/common-components",
