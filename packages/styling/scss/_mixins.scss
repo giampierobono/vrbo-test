@@ -1,1 +1,27 @@
-@import "./variables";
+@import "functions";
+@import "~bootstrap/scss/mixins";
+@import "bootstrap-variables";
+@import "variables";
+
+@mixin addChildrenAnimationDelay($maxElements: 10) {
+  @for $i from 1 through $maxElements {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * (1s / 18);
+    }
+  }
+}
+
+@mixin createPropertyCardSizes {
+  height: pixel-to-rem($card-xs-height);
+  width: pixel-to-rem($card-xs-width);
+
+  @include media-breakpoint-up(sm) {
+    height: pixel-to-rem($card-sm-height);
+    width: pixel-to-rem($card-sm-width);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: pixel-to-rem($card-lg-height);
+    width: 100%;
+  }
+}

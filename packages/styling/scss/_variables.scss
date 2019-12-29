@@ -1,2 +1,12 @@
-@import "~bootstrap/scss/functions";
-@import "./bootstrap-overrides/bootstrap-variables";
+
+$base-font-size: 16px;
+
+$card-skeleton-bg: #cfcfdf;
+
+$card-xs-width: 260;
+$card-xs-height: 262;
+
+$card-sm-width: 295;
+$card-sm-height: 262;
+
+$card-lg-height: 248;
