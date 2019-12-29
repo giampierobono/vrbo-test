@@ -8,9 +8,10 @@
     "build:api-poller": "lerna run build --scope @vrbo/api-poller",
     "build:common-components": "lerna run build --scope @vrbo/common-components",
     "build:data-models": "lerna run build --scope @vrbo/data-models",
-    "build:local:deps": "npm run build:data-models && npm run build:api-poller && npm run build:store && npm run build:common-components",
+    "build:local:deps": "npm run build:styling && npm run build:data-models && npm run build:api-poller && npm run build:store && npm run build:common-components",
     "build:property-leaderboard": "lerna run build --scope @vrbo/property-leaderboard",
     "build:store": "lerna run build --scope @vrbo/store",
+    "build:styling": "lerna run build --scope @vrbo/styling",
     "clean:dist:all": "lerna run clean:dist --parallel",
     "clean:dist:api-poller": "lerna run clean:dist --scope @vrbo/api-poller",
     "clean:dist:common-components": "lerna run clean:dist --scope @vrbo/common-components",
@@ -28,6 +29,7 @@
     "preinstall": "node ./scripts/check-npm.js",
     "postinstall": "lerna bootstrap && npm run build:local:deps",
     "lint:all": "lerna run lint --parallel",
+    "lint:all:fix": "lerna run lint --parallel -- -- --fix",
     "lint:api-poller": "lerna run lint --scope @vrbo/api-poller",
     "lint:api-poller:fix": "lerna run lint --scope @vrbo/api-poller -- -- --fix",
     "lint:common-component": "lerna run lint --scope @vrbo/common-components",
@@ -37,6 +39,7 @@
     "lint:property-leaderboard:fix": "lerna run lint --scope @vrbo/property-leaderboard",
     "lint:store": "lerna run lint --scope @vrbo/store",
     "lint:store:fix": "lerna run lint --scope @vrbo/store -- -- --fix",
+    "lint:style:all": "lerna run lint:style --parallel",
     "sort-package-json:all": "npm run concurrently \"npm run sort-package-json:root\" \"lerna run sort-package-json --parallel\"",
     "sort-package-json:api-poller": "lerna run sort-package-json --scope @vrbo/api-poller",
     "sort-package-json:common-components": "lerna run sort-package-json --scope @vrbo/common-components",
@@ -51,6 +54,10 @@
     }
   },
   "lint-staged": {
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ],
     "*.ts": [
       "tslint --fix --config ./tslint.json",
       "prettier --write",
@@ -63,8 +70,10 @@
     }
   },
   "devDependencies": {
+    "autoprefixer": "^9.7.3",
     "commitizen": "^4.0.3",
     "concurrently": "^5.0.2",
+    "css-loader": "^3.4.0",
     "cz-conventional-changelog": "^3.0.2",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
@@ -72,10 +81,17 @@
     "husky": "^3.1.0",
     "lerna": "^3.15.0",
     "lint-staged": "^9.5.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
     "redux": "^4.0.5",
     "rimraf": "^3.0.0",
+    "sass-loader": "^8.0.0",
     "sort-package-json": "^1.31.0",
+    "style-loader": "^1.1.2",
+    "stylelint": "^12.0.1",
+    "stylelint-config-recommended": "^3.0.0",
     "ts-loader": "^6.2.1",
     "tslib": "1.9.3",
     "tslint": "^5.20.1",

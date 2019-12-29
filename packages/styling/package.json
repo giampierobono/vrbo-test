@@ -1,0 +1,40 @@
+{
+  "name": "@vrbo/styling",
+  "version": "0.0.1",
+  "description": "Styling based on Bootstrap and extended for vrbo components / apps",
+  "license": "MIT",
+  "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
+  "files": [
+    "dist/",
+    "scss/**/*.scss",
+    "assets/**/*"
+  ],
+  "style": "dist/css/index.css",
+  "scripts": {
+    "prebuild": "npm run clean:dist",
+    "build": "gulp build",
+    "clean:dist": "rimraf dist/",
+    "lint:style": "stylelint ./**/*.scss",
+    "sort-package-json": "sort-package-json",
+    "start": "npm run build && npm run watch",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-watch": "^5.0.1"
+  },
+  "peerDependencies": {
+    "gulp": "^4.0.2",
+    "rimraf": "^3.0.0",
+    "sort-package-json": "^1.31.0",
+    "stylint": "^2.0.0",
+    "webpack": "4.41.2"
+  },
+  "sass": "scss/index.scss"
+}
