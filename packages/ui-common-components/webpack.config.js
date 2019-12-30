@@ -14,6 +14,22 @@ const PATHS = {
   dist: path.join(__dirname, "./dist")
 };
 
+const partialConfig = webpackCommon(PATHS, "common-components");
 module.exports = {
-  ...webpackCommon(PATHS, "common-components")
+  ...partialConfig,
+  externals: {
+    ...partialConfig.externals,
+    react: {
+      root: "React",
+      commonjs2: "react",
+      commonjs: "react",
+      amd: "react"
+    },
+    "react-dom": {
+      root: "ReactDOM",
+      commonjs2: "react-dom",
+      commonjs: "react-dom",
+      amd: "react-dom"
+    }
+  }
 };
