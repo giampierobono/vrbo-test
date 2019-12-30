@@ -12,6 +12,7 @@
   "scripts": {
     "prebuild": "npm run clean:dist",
     "build": "webpack",
+    "build:watch": "webpack --watch",
     "clean:dist": "rimraf dist/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "sort-package-json": "sort-package-json"

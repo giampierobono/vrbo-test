@@ -6,11 +6,15 @@
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
   "scripts": {
     "build:api-poller": "lerna run build --scope @vrbo/api-poller",
+    "build:api-poller:watch": "lerna run build:watch --scope @vrbo/api-poller",
     "build:common-components": "lerna run build --scope @vrbo/common-components",
+    "build:common-components:watch": "lerna run build:watch --scope @vrbo/common-components",
     "build:data-models": "lerna run build --scope @vrbo/data-models",
+    "build:data-models:watch": "lerna run build:watch --scope @vrbo/data-models",
     "build:local:deps": "npm run build:styling && npm run build:data-models && npm run build:api-poller && npm run build:store && npm run build:common-components",
     "build:property-leaderboard": "lerna run build --scope @vrbo/property-leaderboard",
     "build:store": "lerna run build --scope @vrbo/store",
+    "build:store:watch": "lerna run build:watch --scope @vrbo/store",
     "build:styling": "lerna run build --scope @vrbo/styling",
     "clean:all": "npm run clean:dist:all && npm run clean:node_modules:all",
     "clean:dist:all": "lerna run clean:dist --parallel",
@@ -51,11 +55,19 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && lint-staged && git cz --hook || true"
+      "prepare-commit-msg": "lint-staged && exec < /dev/tty && git cz --hook || true"
     }
   },
   "lint-staged": {
     "*.html": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
       "prettier --write",
       "git add"
     ],
@@ -64,6 +76,11 @@
       "git add"
     ],
     "*.ts": [
+      "tslint --fix --config ./tslint.json",
+      "prettier --write",
+      "git add"
+    ],
+    "*.tsx": [
       "tslint --fix --config ./tslint.json",
       "prettier --write",
       "git add"
