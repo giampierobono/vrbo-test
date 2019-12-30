@@ -1,8 +1,18 @@
+@import "functions";
+@import "bootstrap-overrides";
 
-$base-font-size: 16px;
+// FONT SIZES
+$font-size-small: pixel-to-rem(14);
+$font-size-medium: $font-size-base;
+$font-size-big: pixel-to-rem(18);
 
+// LINE HEIGHTS
+$line-height-big: $line-height-base;
+$line-height-medium: 1.3;
+$line-height-small: 0.7;
+
+// PROPERTY CARD
 $card-skeleton-bg: #cfcfdf;
-
 $card-xs-width: 260;
 $card-xs-height: 262;
 

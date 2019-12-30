@@ -1,7 +1,9 @@
-@import "./functions";
-@import "./variables";
-@import "./mixins";
 @import "./animations";
-@import "bootstrap-variables";
-@import "~bootstrap/scss/bootstrap";
-
+@import "./functions";
+@import "./mixins";
+@import "./typography";
+@import "./variables";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";

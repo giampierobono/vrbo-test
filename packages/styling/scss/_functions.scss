@@ -1,5 +1,5 @@
-@import "variables";
 @import "~bootstrap/scss/functions";
+@import "bootstrap-overrides";
 
 @function strip-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
@@ -9,6 +9,6 @@
   @return $number;
 }
 
-@function pixel-to-rem($value, $base: $base-font-size) {
+@function pixel-to-rem($value, $base: $font-size-base-px) {
   @return ($value / strip-unit($base)) * 1rem;
 }

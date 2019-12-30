@@ -1,0 +1,11 @@
+@import "variables";
+@import "functions";
+
+html {
+  &.wf-active {
+    &,
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+  }
+}

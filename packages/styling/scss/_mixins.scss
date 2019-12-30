@@ -1,7 +1,6 @@
 @import "functions";
-@import "~bootstrap/scss/mixins";
-@import "bootstrap-variables";
 @import "variables";
+@import "~bootstrap/scss/mixins";
 
 @mixin addChildrenAnimationDelay($maxElements: 10) {
   @for $i from 1 through $maxElements {
