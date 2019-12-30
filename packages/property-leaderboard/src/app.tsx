@@ -5,12 +5,6 @@ import { store } from "./state";
 
 export const App = () => (
   <Provider store={store}>
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col">
-          <PropertiesListContainer />
-        </div>
-      </div>
-    </div>
+    <PropertiesListContainer />
   </Provider>
 );
