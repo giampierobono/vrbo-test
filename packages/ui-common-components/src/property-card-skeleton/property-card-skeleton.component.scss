@@ -1,12 +1,12 @@
 @import "~@vrbo/styling/scss/animations";
 @import "~@vrbo/styling/scss/functions";
-@import "~@vrbo/styling/scss/bootstrap-variables";
+@import "~@vrbo/styling/scss/variables";
 @import "~@vrbo/styling/scss/mixins";
 
 .card-skeleton {
   animation: 1s ease 0s pulse infinite;
   background: $card-skeleton-bg;
 
-  @include createPropertyCardSizes;
+  @include createPropertyCardSizes();
   @include addChildrenAnimationDelay(10);
 }
