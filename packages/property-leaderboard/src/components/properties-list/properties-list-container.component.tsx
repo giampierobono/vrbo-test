@@ -1,8 +1,8 @@
 import { PropertiesListComponent } from "@vrbo/common-components";
 import {
   getPropertiesList,
-  loadPropertiesAction,
-  getPropertiesListLoadingStatus
+  getPropertiesListLoadingStatus,
+  loadPropertiesAction
 } from "@vrbo/store";
 import React, { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
