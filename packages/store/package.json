@@ -18,8 +18,10 @@
     "sort-package-json": "sort-package-json"
   },
   "devDependencies": {
+    "@types/ramda": "^0.26.39",
     "@vrbo/api-poller": "0.0.1",
     "@vrbo/data-models": "0.0.1",
+    "ramda": "^0.26.1",
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
     "reselect": "^4.0.0",
