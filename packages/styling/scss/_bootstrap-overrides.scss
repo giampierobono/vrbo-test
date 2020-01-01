@@ -1,4 +1,12 @@
 $gray-800: #353e44;
 $font-size-base-px: 16px;
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 321px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
 @import "~bootstrap/scss/variables";

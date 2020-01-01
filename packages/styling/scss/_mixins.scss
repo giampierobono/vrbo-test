@@ -24,3 +24,40 @@
     width: 100%;
   }
 }
+
+@mixin addDisplayResponsive {
+  &-md {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &-xs {
+    display: block;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+@mixin headingSmallBold {
+  color: map_get($colors, "grey-800");
+  font-size: $font-size-big;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-medium;
+}
+
+@mixin textBaseRegular {
+  color: map_get($colors, "grey-800");
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-big;
+}
+
+@mixin textSmallRegular {
+  color: map_get($colors, "grey-800");
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-big;
+}
