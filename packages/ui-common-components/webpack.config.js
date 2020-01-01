@@ -1,6 +1,7 @@
 "use strict";
 
 const path = require("path");
+const webpack = require("webpack");
 const webpackCommon = require(path.resolve(
   __dirname,
   "..",
@@ -17,6 +18,14 @@ const PATHS = {
 const partialConfig = webpackCommon(PATHS, "common-components");
 module.exports = {
   ...partialConfig,
+  plugins: [
+    ...partialConfig.plugins,
+    new webpack.ProvidePlugin({
+      Holder: "holderjs",
+      holder: "holderjs",
+      "window.Holder": "holderjs"
+    })
+  ],
   externals: {
     ...partialConfig.externals,
     react: {
