@@ -4,6 +4,8 @@
 .property-card {
   @include createPropertyCardSizes();
 
+  @include addDisplayResponsive();
+
   &__carousel {
     height: pixel-to-rem(180);
 
@@ -13,37 +15,28 @@
   }
 
   &__title {
-    color: map_get($colors, "grey-800");
-    font-size: $font-size-big;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-medium;
+    @include headingSmallBold();
+
     display: none;
 
     @include media-breakpoint-up(md) {
       display: block;
     }
+
+    &-container {
+      min-height: pixel-to-rem(50);
+    }
   }
 
   &__details {
-    &-md {
-      display: none;
-      @include media-breakpoint-up(md) {
-        display: block;
-      }
-    }
+    @include addDisplayResponsive();
 
-    &-xs {
-      display: block;
-      @include media-breakpoint-up(md) {
-        display: none;
-      }
+    &-small-text {
+      @include textSmallRegular();
     }
 
     &--title {
-      color: map_get($colors, "grey-800");
-      font-size: $font-size-medium;
-      font-weight: $font-weight-normal;
-      line-height: $line-height-big;
+      @include textBaseRegular();
 
       &-container {
         display: none;
@@ -63,17 +56,11 @@
   }
 
   &__price {
-    color: map_get($colors, "grey-800");
-    font-size: $font-size-big;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-medium;
+    @include headingSmallBold();
   }
 
   &__sub-text {
-    color: map_get($colors, "grey-800");
-    font-size: $font-size-small;
-    font-weight: $font-weight-normal;
-    line-height: $line-height-big;
+    @include textBaseRegular();
   }
 
   &__rating {
