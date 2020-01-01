@@ -19,7 +19,7 @@
     width: pixel-to-rem($card-sm-width);
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     height: pixel-to-rem($card-lg-height);
     width: 100%;
   }
