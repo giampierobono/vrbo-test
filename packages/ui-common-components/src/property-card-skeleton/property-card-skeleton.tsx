@@ -5,7 +5,7 @@ export const PropertyCardSkeletonComponent = (): React.ReactElement => {
   const skeletonCards = [];
   for (let i = 0; i < 10; i++) {
     skeletonCards.push(
-      <div className="card-skeleton mb-3" key={`skeleton-${i}`} />
+      <div className="card-skeleton my-3" key={`skeleton-${i}`} />
     );
   }
   return (

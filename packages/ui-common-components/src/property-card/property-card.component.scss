@@ -1,0 +1,82 @@
+@import "~@vrbo/styling/scss/mixins";
+@import "~@vrbo/styling/scss/variables";
+
+.property-card {
+  @include createPropertyCardSizes();
+
+  &__carousel {
+    height: pixel-to-rem(180);
+
+    @include media-breakpoint-up(md) {
+      height: 100%;
+    }
+  }
+
+  &__title {
+    color: map_get($colors, "grey-800");
+    font-size: $font-size-big;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-medium;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  &__details {
+    &-md {
+      display: none;
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+    }
+
+    &-xs {
+      display: block;
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    &--title {
+      color: map_get($colors, "grey-800");
+      font-size: $font-size-medium;
+      font-weight: $font-weight-normal;
+      line-height: $line-height-big;
+
+      &-container {
+        display: none;
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+
+    &--value {
+      color: map_get($colors, "grey-800");
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-small;
+      padding: pixel-to-rem(10);
+    }
+  }
+
+  &__price {
+    color: map_get($colors, "grey-800");
+    font-size: $font-size-big;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-medium;
+  }
+
+  &__sub-text {
+    color: map_get($colors, "grey-800");
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-big;
+  }
+
+  &__rating {
+    color: map_get($colors, "green");
+  }
+}
