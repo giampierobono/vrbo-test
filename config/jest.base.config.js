@@ -22,7 +22,6 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   moduleFileExtensions: ["ts", "tsx", "js"],
-  setupFilesAfterEnv: ["<rootDir>/config/setupEnzyme.ts"],
   testMatch: ["**/__tests__/**/*.spec.ts"],
   testPathIgnorePatterns: ["/node_modules/", "<rootDir>/config/setupEnzyme.ts"],
   moduleNameMapper: {
