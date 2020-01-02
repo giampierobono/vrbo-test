@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "allowJs": true,
+    "outDir": "../out-tsc/spec",
+    "baseUrl": "./",
+    "module": "commonjs",
+    "target": "es5",
+    "types": ["jest", "node", "jsdom"],
+    "typeRoots": ["../node_modules/@types"]
+  },
+  "extends": "./tsconfig.json",
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
+}
