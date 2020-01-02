@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Poller config actions should return correct setNewPollerConfigAction object for type condos 1`] = `
+Object {
+  "payload": Object {
+    "limit": 10,
+    "type": "condos",
+  },
+  "type": "[PollerConfig] Set new poller config",
+}
+`;
+
+exports[`Poller config actions should return correct setNewPollerConfigAction object for type houses 1`] = `
+Object {
+  "payload": Object {
+    "limit": 10,
+    "type": "houses",
+  },
+  "type": "[PollerConfig] Set new poller config",
+}
+`;

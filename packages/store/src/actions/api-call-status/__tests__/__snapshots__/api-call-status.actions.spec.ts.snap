@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Api call status actions should return correcnt propertiesPollLoadingStopAction action object 1`] = `
+Object {
+  "type": "[ApiCallStatus] Properties call loading end",
+}
+`;
+
+exports[`Api call status actions should return correct propertiesPollLoadingStartAction action object 1`] = `
+Object {
+  "type": "[ApiCallStatus] Properties call loading start",
+}
+`;

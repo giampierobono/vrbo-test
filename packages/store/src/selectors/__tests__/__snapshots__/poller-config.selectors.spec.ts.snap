@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Poller config selectors getPollerConfig should return correct value 1`] = `
+Object {
+  "limit": 10,
+  "type": "houses",
+}
+`;

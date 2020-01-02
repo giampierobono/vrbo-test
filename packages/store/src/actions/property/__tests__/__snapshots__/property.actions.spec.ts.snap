@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Property actions should return correct failPollingPropertiesListAction object 1`] = `
+Object {
+  "payload": Object {
+    "error": "fake error",
+  },
+  "type": "[Property] Failure polling properties list",
+}
+`;
+
+exports[`Property actions should return correct loadPropertiesAction object 1`] = `
+Object {
+  "type": "[Property] Poll properties list",
+}
+`;
+
+exports[`Property actions should return correct updatePropertiesListAction object 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "bath": 3,
+      "beds": 2,
+      "price": 100,
+      "rating": 10,
+      "ratingCount": 30,
+      "sqFeet": 200,
+      "title": "test prop",
+    },
+  ],
+  "type": "[Property] Update properties list",
+}
+`;

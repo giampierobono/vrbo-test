@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Poller config reducer should set new poller config 1`] = `
+Object {
+  "config": Object {
+    "limit": 100,
+    "type": "condos",
+  },
+}
+`;
