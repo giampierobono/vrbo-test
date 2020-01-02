@@ -44,7 +44,7 @@ module.exports = (basePath, libraryName, options) => {
             {
               loader: "postcss-loader",
               options: {
-                plugins: () => [require('autoprefixer')]
+                plugins: () => [require("autoprefixer")]
               }
             }
           ]
@@ -64,7 +64,7 @@ module.exports = (basePath, libraryName, options) => {
             {
               loader: "postcss-loader",
               options: {
-                plugins: () => [require('autoprefixer')]
+                plugins: () => [require("autoprefixer")]
               }
             }
           ]

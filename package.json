@@ -75,7 +75,6 @@
       "git add"
     ],
     "*.json": [
-      "sort-package-json",
       "prettier --write",
       "git add"
     ],
