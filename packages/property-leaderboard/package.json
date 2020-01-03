@@ -10,8 +10,7 @@
     "eject": "react-scripts eject",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
     "sort-package-json": "sort-package-json",
-    "start": "react-scripts start",
-    "test": "react-scripts test"
+    "start": "react-scripts start"
   },
   "browserslist": {
     "production": [

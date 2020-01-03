@@ -1,3 +1,4 @@
+import { ActionWithPayload, Property } from "@vrbo/data-models";
 import { Action } from "redux";
 import { StateObservable } from "redux-observable";
 import { ActionsObservable } from "redux-observable";
@@ -24,7 +25,7 @@ describe("Property epics", () => {
     let actions$: ActionsObservable<Action>;
     it("should dispatch propertiesPollLoadingStartAction", async done => {
       actions$ = ActionsObservable.from([loadPropertiesAction()]);
-      await loadPropertiesList$(actions$).subscribe(result => {
+      await loadPropertiesList$(actions$).subscribe((result: Action) => {
         expect(result).toEqual(propertiesPollLoadingStartAction());
         done();
       });
@@ -38,7 +39,7 @@ describe("Property epics", () => {
       ]);
       const state$ = new StateObservable<any>(new Subject<any>(), mockState);
       await propertiesPollLoadingStart$(actions$, state$).subscribe(
-        (result: Property[]) => {
+        (result: ActionWithPayload<Property[]>) => {
           expect(result).toMatchSnapshot();
           done();
         }

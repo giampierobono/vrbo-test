@@ -3,11 +3,12 @@
     "sourceMap": false,
     "allowJs": true,
     "outDir": "../out-tsc/spec",
-    "baseUrl": "./",
+    "baseUrl": "../",
     "module": "commonjs",
     "target": "es5",
     "types": ["jest", "node", "jsdom"],
-    "typeRoots": ["../node_modules/@types"]
+    "typeRoots": ["../node_modules/@types"],
+    "jsx": "react"
   },
   "extends": "./tsconfig.json",
   "include": ["**/*.spec.ts", "**/*.d.ts"]

@@ -21,10 +21,12 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },
+  rootDir: "../",
   moduleFileExtensions: ["ts", "tsx", "js"],
   testMatch: ["**/__tests__/**/*.spec.ts"],
   testPathIgnorePatterns: ["/node_modules/", "<rootDir>/config/setupEnzyme.ts"],
   moduleNameMapper: {
-    "\\.(scss)$": "identity-obj-proxy"
+    "\\.(scss)$": "identity-obj-proxy",
+    "^@vrbo/(.*)$": "<rootDir>/packages/$1"
   }
 };

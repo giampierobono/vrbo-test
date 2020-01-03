@@ -52,9 +52,12 @@
     "sort-package-json:leaderboard": "lerna run sort-package-json --scope @vrbo/property-leaderboard",
     "sort-package-json:root": "sort-package-json package.json",
     "start:property-leaderboard": "lerna run start --scope @vrbo/property-leaderboard",
-    "test:all": "yarn concurrently \"npm run test:store\"",
-    "test:all:ci": "yarn concurrently \"npm run test:store:ci\"",
-    "test:all:snapshots": "yarn concurrently \"npm run test:store:snapshots\"",
+    "test:all": "lerna run test --parallel",
+    "test:all:ci": "lerna run test --parallel -- -- --coverage",
+    "test:all:snapshots": "lerna run test --parallel -- -- -u",
+    "test:api-poller": "lerna run test --scope @vrbo/api-poller",
+    "test:api-poller:ci": "lerna run test --scope @vrbo/api-poller -- -- --coverage",
+    "test:api-poller:snapshots": "lerna run test --scope @vrbo/api-poller -- -- -u",
     "test:store": "lerna run test --scope @vrbo/store",
     "test:store:ci": "lerna run test --scope @vrbo/store -- -- --coverage",
     "test:store:snapshots": "lerna run test --scope @vrbo/store -- -- -u"
@@ -98,7 +101,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.25",
@@ -125,6 +127,7 @@
     "prettier": "^1.19.1",
     "redux": "^4.0.5",
     "rimraf": "^3.0.0",
+    "rxjs-marbles": "^5.0.4",
     "sass-loader": "^8.0.0",
     "sort-package-json": "^1.31.0",
     "style-loader": "^1.1.2",
