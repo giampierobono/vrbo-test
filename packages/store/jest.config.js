@@ -2,7 +2,11 @@ const base = require("../../config/jest.base.config.js");
 
 module.exports = {
   ...base,
-  collectCoverageFrom: [...base.collectCoverageFrom, "packages/store/**/*.ts"],
+  collectCoverageFrom: [
+    ...base.collectCoverageFrom,
+    "packages/store/**/*.ts",
+    "!test-helper.ts"
+  ],
   coverageDirectory: "coverage/store",
   globals: {
     ...base.globals,
@@ -10,7 +14,7 @@ module.exports = {
       tsConfig: "<rootDir>/packages/store/tsconfig.spec.json"
     }
   },
-  rootDir: "../../",
+  rootDir: "../..",
   displayName: {
     name: "store",
     color: "redBright"

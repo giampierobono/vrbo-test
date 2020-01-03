@@ -1,9 +1,15 @@
 {
+  "extends": "../../config/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist",
     "rootDir": "src"
   },
-  "exclude": ["node_modules", "**/*.spec.ts"],
-  "extends": "../../config/tsconfig"
+  "exclude": [
+    "node_modules",
+    "**/__tests__",
+    "__mocks__",
+    "test-helpers",
+    "dist"
+  ]
 }
