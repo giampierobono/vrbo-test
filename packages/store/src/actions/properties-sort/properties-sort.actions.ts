@@ -1,12 +1,12 @@
-import { ActionWithPayload, PropertiesSortBy } from "@vrbo/data-models";
+import { ActionWithPayload, PropertiesSortByConfig } from "@vrbo/data-models";
 
 export enum PropertiesSortActions {
-  SetSortParam = "[PropertiesSort] Set new sort param"
+  SetSortByConfig = "[PropertiesSort] Set new sort param"
 }
 
 export const setNewPropertiesSortAction = (
-  sortBy: PropertiesSortBy
-): ActionWithPayload<PropertiesSortBy> => ({
-  type: PropertiesSortActions.SetSortParam,
+  sortBy: PropertiesSortByConfig
+): ActionWithPayload<PropertiesSortByConfig> => ({
+  type: PropertiesSortActions.SetSortByConfig,
   payload: sortBy
 });

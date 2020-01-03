@@ -1,4 +1,4 @@
 import { GlobalState } from "../global-state.model";
 
-export const getPropertiesListLoadingStatus = (state: GlobalState) =>
+export const getPropertiesListLoadingStatus = (state: GlobalState): boolean =>
   state.apiCallStatus.propertiesPollLoading;

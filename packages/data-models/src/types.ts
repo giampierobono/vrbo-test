@@ -1,2 +1,2 @@
 /// <reference types="typescript" />
-export * from "./index";
+export * from "./";

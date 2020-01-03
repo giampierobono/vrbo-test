@@ -1,63 +1,57 @@
-import { mockState } from "../../../../../jest-global-mocks";
-import {
-  sortByBath,
-  sortByBeds,
-  sortByPrice,
-  sortByRating,
-  sortByRatingCount,
-  sortBySqFeets,
-  sortByTitle
-} from "../sort.utils";
+import { sortByConfig } from "../sort.utils";
 
 describe("Sort utils", () => {
-  describe("sortByTitle", () => {
-    it("should return list sorted asc by title", () => {
+  const arrayToSort = [
+    {
+      propString: "R",
+      propNum: 3
+    },
+    {
+      propString: "E",
+      propNum: 13
+    },
+    {
+      propString: "D",
+      propNum: 34
+    },
+    {
+      propString: "A",
+      propNum: 54
+    },
+    {
+      propString: "H",
+      propNum: 0
+    },
+    {
+      propString: "F",
+      propNum: 24
+    }
+  ];
+
+  describe("sort by prop string", () => {
+    it("should sort ascending", () => {
       expect(
-        sortByTitle(mockState.propertiesList.properties)
+        sortByConfig({ prop: "propString", asc: true } as any)(arrayToSort)
+      ).toMatchSnapshot();
+    });
+
+    it("should sort descending", () => {
+      expect(
+        sortByConfig({ prop: "propString", asc: false } as any)(arrayToSort)
       ).toMatchSnapshot();
     });
   });
 
-  describe("sortByRating", () => {
-    it("should return list sorted asc by rating", () => {
+  describe("sort by prop num", () => {
+    it("should sort ascending", () => {
       expect(
-        sortByRating(mockState.propertiesList.properties)
+        sortByConfig({ prop: "propNum", asc: true } as any)(arrayToSort)
       ).toMatchSnapshot();
     });
-  });
 
-  describe("sortByRatingCount", () => {
-    it("should return list sorted asc by rating count", () => {
+    it("should sort descending", () => {
       expect(
-        sortByRatingCount(mockState.propertiesList.properties)
-      ).toMatchSnapshot();
-    });
-  });
-
-  describe("sortByPrice", () => {
-    it("should return list sorted asc by price", () => {
-      expect(
-        sortByPrice(mockState.propertiesList.properties)
-      ).toMatchSnapshot();
-    });
-  });
-
-  describe("sortByBeds", () => {
-    it("should return list sorted asc by beds count", () => {
-      expect(sortByBeds(mockState.propertiesList.properties)).toMatchSnapshot();
-    });
-  });
-
-  describe("sortByBath", () => {
-    it("should return list sorted asc by baths count", () => {
-      expect(sortByBath(mockState.propertiesList.properties)).toMatchSnapshot();
-    });
-  });
-
-  describe("sortBySqFeets", () => {
-    it("should return list sorted asc by sqFeets count", () => {
-      expect(
-        sortBySqFeets(mockState.propertiesList.properties)
+        sortByConfig({ prop: "propNum", asc: false } as any)(arrayToSort)
       ).toMatchSnapshot();
     });
   });

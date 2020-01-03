@@ -1,23 +1,30 @@
-import { ActionWithPayload, PropertiesSortBy } from "@vrbo/data-models";
+import {
+  ActionWithPayload,
+  PropertiesSortBy,
+  PropertiesSortByConfig
+} from "@vrbo/data-models";
 import { PropertiesSortActions } from "../../actions/properties-sort";
 
 export interface PropertiesListSortByState {
-  sortConfig: PropertiesSortBy;
+  sortConfig: PropertiesSortByConfig;
 }
 
 export const initialPropertiesListSortByState: PropertiesListSortByState = {
-  sortConfig: PropertiesSortBy.Title
+  sortConfig: {
+    prop: PropertiesSortBy.Title,
+    asc: true
+  }
 };
 
 export const propertiesListSortReducer = (
   state: PropertiesListSortByState = initialPropertiesListSortByState,
-  action: ActionWithPayload<PropertiesSortBy>
+  action: ActionWithPayload<PropertiesSortByConfig>
 ): PropertiesListSortByState => {
   switch (action.type) {
-    case PropertiesSortActions.SetSortParam: {
+    case PropertiesSortActions.SetSortByConfig: {
       return {
         ...state,
-        sortConfig: action.payload!
+        sortConfig: { ...action.payload! }
       };
     }
     default: {

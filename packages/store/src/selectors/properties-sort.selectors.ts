@@ -1,4 +1,6 @@
+import { PropertiesSortByConfig } from "@vrbo/data-models";
 import { GlobalState } from "../global-state.model";
 
-export const getPropertiesSortByConfig = (state: GlobalState) =>
-  state.propertiesListSortBy.sortConfig;
+export const getPropertiesSortByConfig = (
+  state: GlobalState
+): PropertiesSortByConfig => state.propertiesListSortBy.sortConfig;

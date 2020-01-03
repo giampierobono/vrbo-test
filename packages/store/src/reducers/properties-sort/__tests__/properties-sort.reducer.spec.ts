@@ -16,8 +16,11 @@ describe("Properties sort reducer", () => {
   it("should set new sort config params", () => {
     const result = propertiesListSortReducer(
       initialPropertiesListSortByState,
-      setNewPropertiesSortAction(PropertiesSortBy.Price)
+      setNewPropertiesSortAction({ prop: PropertiesSortBy.Title, asc: true })
     );
-    expect(result.sortConfig).toBe(PropertiesSortBy.Price);
+    expect(result.sortConfig).toEqual({
+      prop: PropertiesSortBy.Title,
+      asc: true
+    });
   });
 });

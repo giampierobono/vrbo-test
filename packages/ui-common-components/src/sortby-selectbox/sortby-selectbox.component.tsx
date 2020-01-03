@@ -1,4 +1,4 @@
-import { PropertiesSortBy } from "@vrbo/data-models";
+import { PropertiesSortBy, PropertiesSortByLabels } from "@vrbo/data-models";
 import React, { ChangeEvent } from "react";
 
 export const SortBySelectBox = ({
@@ -8,10 +8,10 @@ export const SortBySelectBox = ({
   onChangeCallback: (changeEvent: ChangeEvent<HTMLSelectElement>) => void;
   disabled: boolean;
 }): React.ReactElement => {
-  const options = Object.keys(PropertiesSortBy).map(
+  const options = Object.keys(PropertiesSortByLabels).map(
     (key: string, index: number) => (
-      <option key={`sort-option-${index}`} value={PropertiesSortBy[key]}>
-        {PropertiesSortBy[key]}
+      <option key={`sort-option-${index}`} value={PropertiesSortByLabels[key]}>
+        {PropertiesSortByLabels[key]}
       </option>
     )
   );

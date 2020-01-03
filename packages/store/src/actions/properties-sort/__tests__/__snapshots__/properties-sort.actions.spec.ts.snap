@@ -2,7 +2,10 @@
 
 exports[`Properties sort config actions should return correct setNewPropertiesSortAction object 1`] = `
 Object {
-  "payload": "Title",
+  "payload": Object {
+    "asc": true,
+    "prop": "title",
+  },
   "type": "[PropertiesSort] Set new sort param",
 }
 `;
