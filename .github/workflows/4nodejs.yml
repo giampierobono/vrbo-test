@@ -22,5 +22,6 @@ jobs:
         npm i
         npm run lint:all
         npm run test:all:ci
+        npm run build:property-leaderboard
       env:
         CI: true

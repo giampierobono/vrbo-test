@@ -5,8 +5,9 @@
   "license": "MIT",
   "author": "Giampiero Bono <giampiero.bono@hotmail.it>",
   "scripts": {
+    "prebuild": "npm run clean:dist",
     "build": "react-scripts build",
-    "clean:lib": "rimraf build",
+    "clean:dist": "rimraf build",
     "eject": "react-scripts eject",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
     "sort-package-json": "sort-package-json",
