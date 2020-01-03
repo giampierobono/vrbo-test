@@ -9,6 +9,7 @@ export * from "./reducers";
 
 const epicMiddleware = createEpicMiddleware();
 
+// composeWithDevTools should not be available in PROD build
 const configureStore = (): Store => {
   const result = createStore(
     rootReducer,
