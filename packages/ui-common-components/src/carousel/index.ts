@@ -1,1 +1,1 @@
-export * from "./property-card-carousel";
+export * from "./property-card-carousel.component";
