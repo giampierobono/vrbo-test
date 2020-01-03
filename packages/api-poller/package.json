@@ -15,7 +15,8 @@
     "build:watch": "webpack --watch",
     "clean:dist": "rimraf dist/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "sort-package-json": "sort-package-json"
+    "sort-package-json": "sort-package-json",
+    "test": "jest --config jest.config.js --runInBand"
   },
   "dependencies": {
     "@vrbo/data-models": "0.0.1"
