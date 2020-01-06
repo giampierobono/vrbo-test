@@ -1,4 +1,4 @@
-import { PropertiesSortBy, PropertiesSortByLabels } from "@vrbo/data-models";
+import { PropertiesSortByLabels } from "@vrbo/data-models";
 import React, { ChangeEvent } from "react";
 
 export const SortBySelectBox = ({
