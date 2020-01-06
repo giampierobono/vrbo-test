@@ -22,7 +22,8 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie 11"
     ]
   },
   "dependencies": {
@@ -34,7 +35,9 @@
     "@vrbo/data-models": "0.0.1",
     "@vrbo/store": "0.0.1",
     "@vrbo/styling": "0.0.1",
+    "core-js": "^3.6.1",
     "react": "^16.12.0",
+    "react-app-polyfill": "^1.0.5",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
     "react-scripts": "3.3.0",
