@@ -62,7 +62,7 @@ const processData = (data: Property[], limit: number): Property[] =>
 export const poll = (
   options: PollerConfig,
   callBack?: (properties: Property[]) => void
-) => {
+): Promise<Property[]> => {
   const config: PollerConfig = { ...pollerDefaultConfig, ...options };
   return new Promise(resolve => {
     setTimeout(() => {
