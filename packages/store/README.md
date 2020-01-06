@@ -74,7 +74,7 @@ In every reducer file is define an interface describing shape of the state secti
 
 ## Epics
 
-Epics are used to subscribe to specific actions and, eventually, emit others. They are execture right after reducers.
+Epics are used to subscribe to specific actions and, eventually, emit others. They are executed right after reducers.
 
 ### Property epics
 

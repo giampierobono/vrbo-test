@@ -4,7 +4,7 @@
 
 ![CI badge](https://github.com/giampierobono/vrbo-test/workflows/vrtbo-test:ci/badge.svg)[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-The project is organized as a monorepo and includes 5 different projects:
+The project is organised as a monorepo and includes 5 different projects:
 
 * **@vrbo/data-models**
 * **@vrbo/api-poller**
@@ -48,7 +48,7 @@ That's pretty much everything needed to run this project on your machine, now op
 
 This command will install dependencies and after the `postinstall` script will take care of building all the local dependencies and link them in `node_modules` folders of projects requiring them as dependencies. 
 
-`package.json` file in project's root is used to run commands for every module in the monorepo. In this way many dependecies (like `rimraf`) have been declated as `peerDependencies` and not repeated. 
+`package.json` file in project's root is used to run commands for every module in the monorepo. In this way many dependecies (like `rimraf`) have been declared as `peerDependencies` and not repeated. 
 
 *One package.json to lead them all*
 
@@ -93,7 +93,7 @@ Also `sass` files are checked by `stylelint `.
 
 Reccomended configurations (format / linter rules) are used, but they can be easily customized to fit companies requirements.
 
-This repo is commitizen friendly and commit messages are created following commitizen recommendations. 
+This repo is commitizen friendly and commit messages are created following its recommendations. 
 
 ## Tests
 
@@ -105,6 +105,6 @@ Not all projects contain tests. Only `@vrbo/store` and `@vrbo/api-poller` contai
 
 * Webpack config could be improved to reduce bundle sizes.
 * File names can be adapted to be camel case and respect style guidelines. 
-* Probably some of package.json dependencies can be set as webpack externals to ensure their are not added twice to the bundle (currently should not be the case, but there are always ways to improve).
+* Probably some of package.json dependencies can be set as webpack externals to ensure they're not added twice to the bundle (currently should not be the case, but there are always ways to improve).
 * Components styles
 * Components tests  to be added

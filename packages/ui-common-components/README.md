@@ -14,7 +14,7 @@ This component is used to create fake images on the fly using `holderjs` library
 
 Inputs:
 
-* `src: string`: `holderjs` image sourc. Ex: `holder.js/100px248?auto=yes&text=First pic&bg=282c34&theme=social` 
+* `src: string`: `holderjs` image source. Ex: `holder.js/100px248?auto=yes&text=First pic&bg=282c34&theme=social` 
 * `alt: string`: image alternative text 
 * `cssClasses: string`: css custom classes to be applied to `img` tag
 
@@ -34,7 +34,7 @@ No inputs.
 
 ## PropertiesListComponent
 
-This component displays a list of `PropertyCardComponent` or `PropertyCardSkeletonComponent` if call to backend is still loading.
+This component displays a list of `PropertyCardComponent` or `PropertyCardSkeletonComponent` if backend call is still loading.
 
 Inputs:
 
@@ -43,4 +43,4 @@ Inputs:
 
 ## SortBySelectBox
 
-This component is a select box having as options list all the allowed sort by values coming from `PropertiesSortByLabels` values.
+This component is a select box having as options list all the allowed sort-by values coming from `PropertiesSortByLabels` values.
